@@ -22,6 +22,7 @@ import {
   keyDictionarySymbol,
   labelSymbol,
   querySymbol,
+  stringEncodedSymbol,
   unionCasesSymbol,
   type ErrorMatcher,
   type HttpTrait,
@@ -319,6 +320,18 @@ const BODYLESS = new Set(["GET", "HEAD"]);
  * filter matching nothing — the call "succeeds" with zero results and the
  * bug is invisible to the caller.
  */
+/**
+ * Value form for a `StringEncoded()` member: the string spelling of the
+ * value, element-wise for lists. `null` stays `null` — an API that models a
+ * flag as `"true" | "false"` still means "unset" by null, not `"null"`.
+ */
+const stringEncode = (value: unknown): unknown =>
+  value === null
+    ? null
+    : Array.isArray(value)
+      ? value.map(stringEncode)
+      : String(value);
+
 const appendQuery = (
   query: URLSearchParams,
   name: string,
@@ -482,12 +495,13 @@ export const buildRequest = ({
     } else if (hasPropAnn(prop, httpBodySymbol)) {
       rawBody = mapKeys(prop.type, value, "encode", rootDict);
     } else {
-      body[nameOf(prop, bodySymbol)] = mapKeys(
-        prop.type,
-        value,
-        "encode",
-        rootDict,
-      );
+      // T.StringEncoded(): the API takes this member's value only as its
+      // string spelling (`true` → `"true"`), while the TS surface keeps the
+      // natural type. Explicit here so a JSON body carries the string too,
+      // rather than relying on the multipart encoder's own `String()`.
+      body[nameOf(prop, bodySymbol)] = hasPropAnn(prop, stringEncodedSymbol)
+        ? stringEncode(value)
+        : mapKeys(prop.type, value, "encode", rootDict);
     }
   }
 
