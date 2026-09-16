@@ -99322,6 +99322,7 @@ export const modifyRouteServer: API.OperationMethod<
 
 export type ModifySecurityGroupRulesError =
   | RequestLimitExceeded
+  | InvalidParameterValue
   | MissingParameter
   | UnauthorizedOperation
   | CommonErrors;
@@ -99336,7 +99337,12 @@ export const modifySecurityGroupRules: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: ModifySecurityGroupRulesRequest,
   output: ModifySecurityGroupRulesResult,
-  errors: [RequestLimitExceeded, MissingParameter, UnauthorizedOperation],
+  errors: [
+    RequestLimitExceeded,
+    InvalidParameterValue,
+    MissingParameter,
+    UnauthorizedOperation,
+  ],
   protocol: AwsProtocol,
   retry: Retry,
   operationName: "ModifySecurityGroupRules",
@@ -102086,6 +102092,7 @@ export const revokeClientVpnIngress: API.OperationMethod<
 
 export type RevokeSecurityGroupEgressError =
   | RequestLimitExceeded
+  | InvalidSecurityGroupRuleIdNotFound
   | InvalidGroupNotFound
   | InvalidGroupIdMalformed
   | InvalidParameterValue
@@ -102125,6 +102132,7 @@ export const revokeSecurityGroupEgress: API.OperationMethod<
   output: RevokeSecurityGroupEgressResult,
   errors: [
     RequestLimitExceeded,
+    InvalidSecurityGroupRuleIdNotFound,
     InvalidGroupNotFound,
     InvalidGroupIdMalformed,
     InvalidParameterValue,
@@ -102142,6 +102150,7 @@ export const revokeSecurityGroupEgress: API.OperationMethod<
 
 export type RevokeSecurityGroupIngressError =
   | RequestLimitExceeded
+  | InvalidSecurityGroupRuleIdNotFound
   | InvalidGroupNotFound
   | InvalidGroupIdMalformed
   | InvalidPermissionNotFound
@@ -102183,6 +102192,7 @@ export const revokeSecurityGroupIngress: API.OperationMethod<
   output: RevokeSecurityGroupIngressResult,
   errors: [
     RequestLimitExceeded,
+    InvalidSecurityGroupRuleIdNotFound,
     InvalidGroupNotFound,
     InvalidGroupIdMalformed,
     InvalidPermissionNotFound,
