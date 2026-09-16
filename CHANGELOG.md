@@ -1,3 +1,48 @@
+## v1.0.0-rc.10
+
+### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
+
+- **cloudflare**: Restore configuration wrapper on Containers create &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/602 [<samp>(97695)</samp>](https://github.com/alchemy-run/distilled/commit/9769566e8)
+- **railway**: Expose only the native GraphQL client &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/588 [<samp>(c5b83)</samp>](https://github.com/alchemy-run/distilled/commit/c5b839daa)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **aws**:
+  - Replace aws4fetch with Effect-native SigV4 signer &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/577 [<samp>(e8f6a)</samp>](https://github.com/alchemy-run/distilled/commit/e8f6a7c4f)
+  - Inline crc32 fallback &nbsp;-&nbsp; by **Rahul Mishra** in https://github.com/alchemy-run/distilled/issues/582 [<samp>(2754d)</samp>](https://github.com/alchemy-run/distilled/commit/2754dd726)
+  - Effect-native credential providers &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/587 [<samp>(ee6b0)</samp>](https://github.com/alchemy-run/distilled/commit/ee6b0d84d)
+- **cloudflare**:
+  - Worker Previews API and custom-domain previews_enabled &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/576 [<samp>(fb98d)</samp>](https://github.com/alchemy-run/distilled/commit/fb98d73bd)
+  - Read specs from spec-mirror-cloudflare &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/595 [<samp>(95590)</samp>](https://github.com/alchemy-run/distilled/commit/955901612)
+  - CreateUserSchema validationEnabled takes a boolean &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/599 [<samp>(36f9f)</samp>](https://github.com/alchemy-run/distilled/commit/36f9fd60e)
+- **codegen**:
+  - Boolean-string request members become booleans everywhere &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/600 [<samp>(95464)</samp>](https://github.com/alchemy-run/distilled/commit/95464cc03)
+- **railway**:
+  - Add selective Effect GraphQL code generation &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/580 [<samp>(de878)</samp>](https://github.com/alchemy-run/distilled/commit/de8784849)
+  - Refresh sandbox schema and type lifecycle errors &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/607 [<samp>(41c91)</samp>](https://github.com/alchemy-run/distilled/commit/41c91dbd4)
+- **s2**:
+  - Add the S2 (s2.dev) SDK &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/591 [<samp>(fb5ef)</samp>](https://github.com/alchemy-run/distilled/commit/fb5efddd3)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- Remove invalid PURE annotations &nbsp;-&nbsp; by **Rahul Mishra** in https://github.com/alchemy-run/distilled/issues/558 [<samp>(17029)</samp>](https://github.com/alchemy-run/distilled/commit/17029f4fe)
+- **aws**:
+  - **ec2**: Type security group rule mutation errors &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/608 [<samp>(96aa9)</samp>](https://github.com/alchemy-run/distilled/commit/96aa9a695)
+- **cloudflare**:
+  - Reshape Containers create payload to live API &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/594 [<samp>(2713e)</samp>](https://github.com/alchemy-run/distilled/commit/2713e32ae)
+  - Drop bad validationEnabled member from createUserSchema patch &nbsp;-&nbsp; by **Michael K** and **manager** in https://github.com/alchemy-run/distilled/issues/596 [<samp>(ae494)</samp>](https://github.com/alchemy-run/distilled/commit/ae494cac6)
+  - Drop patch adds the docs now cover (pages, r2) &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/597 [<samp>(24ef3)</samp>](https://github.com/alchemy-run/distilled/commit/24ef3f7f8)
+  - Stop the converter splitting type names that end in "or" &nbsp;-&nbsp; by **Michael K** in https://github.com/alchemy-run/distilled/issues/603 [<samp>(fce95)</samp>](https://github.com/alchemy-run/distilled/commit/fce951d4e)
+  - Type empty-zone snippet rule deletion errors &nbsp;-&nbsp; by **Rahul Mishra** in https://github.com/alchemy-run/distilled/issues/606 [<samp>(a788b)</samp>](https://github.com/alchemy-run/distilled/commit/a788b889e)
+- **core**:
+  - Preserve nullable OpenAPI collection values &nbsp;-&nbsp; by **Rahul Mishra** in https://github.com/alchemy-run/distilled/issues/584 [<samp>(27c58)</samp>](https://github.com/alchemy-run/distilled/commit/27c5845e3)
+- **deps**:
+  - Update to effect 4.0.0-rc.113 &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/575 [<samp>(8ceed)</samp>](https://github.com/alchemy-run/distilled/commit/8ceedc104)
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/alchemy-run/distilled/compare/v1.0.0-rc.9...HEAD)
+
+---
+
 ## v1.0.0-rc.9
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
