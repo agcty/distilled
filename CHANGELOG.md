@@ -1,3 +1,20 @@
+## v1.0.0-rc.11
+
+### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
+
+- **prisma**: Rename SDK package to prisma &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/612 [<samp>(47daf)</samp>](https://github.com/alchemy-run/distilled/commit/47daffa3b)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **aws**:
+  - **rds**: Type engine-version parameter errors &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/613 [<samp>(f5ecf)</samp>](https://github.com/alchemy-run/distilled/commit/f5ecf4dd8)
+- **prisma**:
+  - Type Prisma lifecycle and Hyperdrive origin errors &nbsp;-&nbsp; by **sam** in https://github.com/alchemy-run/distilled/issues/610 [<samp>(2a62c)</samp>](https://github.com/alchemy-run/distilled/commit/2a62c5175)
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/alchemy-run/distilled/compare/v1.0.0-rc.10...HEAD)
+
+---
+
 ## v1.0.0-rc.10
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
