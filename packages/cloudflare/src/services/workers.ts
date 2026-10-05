@@ -11354,13 +11354,9 @@ export const PutScriptMetadataExport = /*@__PURE__*/ S.suspend(() =>
     transferredTo: S.optional(S.String.pipe(T.Body("transferred_to"))),
     transferFrom: S.optional(S.String.pipe(T.Body("transfer_from"))),
   }),
-).annotate({
-  identifier: "PutScriptMetadataExport",
-}) as any as S.Schema<PutScriptMetadataExport>;
+).annotate({ identifier: "PutScriptMetadataExport" }) as any as S.Schema<PutScriptMetadataExport>;
 
-export type PutScriptMetadataExports = {
-  [key: string]: PutScriptMetadataExport | undefined;
-};
+export type PutScriptMetadataExports = { [key: string]: PutScriptMetadataExport | undefined };
 export const PutScriptMetadataExports = /*@__PURE__*/ S.Record(
   S.String,
   PutScriptMetadataExport,
